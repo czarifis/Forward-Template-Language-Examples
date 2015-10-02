@@ -29,5 +29,5 @@ Therefore selected_values will look like this:
 		        	}
 				<% end unit %>
 			<% end for %>
-		<button onclick="postData(selected_values)">Click me</button>
-	<% end template %>
+			<button onclick="postData(selected_values)">Click me</button>
+		<% end template %>
