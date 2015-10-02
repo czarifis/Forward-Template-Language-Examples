@@ -18,13 +18,13 @@ Therefore selected_values will look like this:
 
  
 
-	<% template root() %>
-		<% refresh students = getStudents() %>
-		<% init selected_values = {} %>
-		<% for student in students %>
-			<% init selected_values[student.sid] = false %>
-			<% unit html.Checkbox %>
-        	{
+		<% template root() %>
+			<% refresh students = getStudents() %>
+			<% init selected_values = {} %>
+			<% for student in students %>
+				<% init selected_values[student.sid] = false %>
+				<% unit html.Checkbox %>
+	        	{
             	checked : <% selected_values[student.sid] %> <!-- There is some magic happening here check point # 1 -->
         	}
 			<% end unit %>
