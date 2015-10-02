@@ -1,14 +1,15 @@
 ## Some comments for this example:
 
 Assume that students look like this:
-students: [
-	{ sid: 10, name: 'x' },
-    { sid: 20, name: 'y' }
-]
-selected_values : {
-	10: false,
-	20: false
-}
+
+	students: [
+		{ sid: 10, name: 'x' },
+	    { sid: 20, name: 'y' }
+	]
+	selected_values : {
+		10: false,
+		20: false
+	}
 Therefore selected_values will look like this:
 selected_values 
 
