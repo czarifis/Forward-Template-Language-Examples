@@ -8,6 +8,7 @@ Assume that students look like this:
 	]
 	
 Therefore selected_values will look like this:
+
 	selected_values : {
 		10: false,
 		20: false
