@@ -14,7 +14,7 @@ Therefore selected_values will look like this:
 		20: false
 	}
 
-selected_values 
+ 
 
 	<% template root() %>
 		<% refresh students = getStudents() %>
