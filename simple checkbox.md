@@ -1,5 +1,5 @@
 ## Some comments for this example:
-* I'm assuming that we only have collecting data that we use for reporting as well. At this point it's not clear to me if IVM optimizations are supported to collecting variables.
+* I'm assuming that we only have collecting data that we use for reporting as well. I think that this is up to the application developer to decide if he will differentiate between the reporting and the mutable page model and we should not force him to do so. At this point it's not clear to me if IVM optimizations are supported to collecting variables.
 * There is a slight issue with the BNF when we have: 
 checked: <% bind element.checked %>
 We only support:
