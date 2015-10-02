@@ -25,9 +25,9 @@ Therefore selected_values will look like this:
 				<% init selected_values[student.sid] = false %>
 				<% unit html.Checkbox %>
 	        	{
-            	checked : <% selected_values[student.sid] %> <!-- There is some magic happening here check point # 1 -->
-        	}
-			<% end unit %>
-		<% end for %>
+		            	checked : <% selected_values[student.sid] %> <!-- There is some magic happening here check point # 1 -->
+		        	}
+				<% end unit %>
+			<% end for %>
 		<button onclick="postData(selected_values)">Click me</button>
 	<% end template %>
