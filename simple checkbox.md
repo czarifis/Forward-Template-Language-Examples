@@ -36,8 +36,8 @@ We only support:
     	 			"checked": false
     			},
     			{
-    					"name":"Bicycle", 
-    	 		"checked": false
+    				"name":"Bicycle", 
+    	 			"checked": false
     			}
     		]    		
 
