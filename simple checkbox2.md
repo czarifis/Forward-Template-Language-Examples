@@ -6,11 +6,13 @@ Assume that students look like this:
 		{ sid: 10, name: 'x' },
 	    { sid: 20, name: 'y' }
 	]
+	
+Therefore selected_values will look like this:
 	selected_values : {
 		10: false,
 		20: false
 	}
-Therefore selected_values will look like this:
+
 selected_values 
 
 	<% template root() %>
