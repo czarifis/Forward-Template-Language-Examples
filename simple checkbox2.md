@@ -30,4 +30,7 @@ Therefore selected_values will look like this:
 				<% end unit %>
 			<% end for %>
 			<button onclick="postData(selected_values)">Click me</button>
+			<% unit html.button %>
+			
+			<% end unit %>
 		<% end template %>
