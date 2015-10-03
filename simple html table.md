@@ -12,6 +12,10 @@ Assume that students look like this:
 	
 1. Notice in this example the application developer knows the attribute names in advance and he specifically uses them (he doesn't have to iterate over the attributes of the students object)
 
+view:
+
+![html table](images/html1.png)
+
  
 
 		<% template root() %>
