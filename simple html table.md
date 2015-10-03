@@ -29,9 +29,9 @@ view:
 					</tr>
 					<% for student in students %>
 						<tr>
-							<td> student.name </td>
-							<td> student.lastname </td>
-							<td> student.points </td>
+							<td> <%= student.name %></td>
+							<td> <%= student.lastname %></td>
+							<td> <%= student.points %></td>
 							
 						</tr>
 					<% end for %>
