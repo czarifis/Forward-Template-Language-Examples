@@ -53,7 +53,7 @@ view:
 * Another way to write this is using the pos() function:
 
 
-	<% template root() %>
+		<% template root() %>
 			<% refresh students = getStudents() %>
 			<% html %>
 				<table>	
