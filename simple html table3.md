@@ -83,5 +83,34 @@ view:
 				
 			<% end html %>
 		<% end template %>
+		
+* Based on the BNF we also support the following:
+
+		<% template root() %>
+        <% refresh students = getStudents() %>
+        <% html %>
+            <table> 
+                <tr class="header_css">
+                    <th> name </th>
+                    <th> lastname </th>
+                    <th> points </th>
+                </tr>
+                <% for i, student in students %>
+                    <tr class = "<% if i % 2 === 0 then %>
+                    					even_class
+                    			  <% else %>
+                    			  		odd_class
+                    			  <% end if %>">
+                        <td> <%= student.name %></td>
+                        <td> <%= student.lastname %></td>
+                        <td> <%= student.points %></td>
+
+                    </tr>
+                <% end for %>
+
+            </table>            
+
+        <% end html %>
+    	<% end template %>
 
 
