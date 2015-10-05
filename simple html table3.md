@@ -117,28 +117,26 @@ view:
 * I think it makes sense to also support the following:
 
 		<% template root() %>
-        <% refresh students = getStudents() %>
-        <% html %>
-            <table> 
-                <tr class="header_css">
-                    <th> name </th>
-                    <th> lastname </th>
-                    <th> points </th>
-                </tr>
-                <% for i, student in students %>
-                	<% if i % 2 === 0 then %>
-                    	<tr class = "even_class">
-                   <% else %>			  
-                    	<tr class = "odd_class"	
-                   <% end if %>
-                        <td> <%= student.name %></td>
-                        <td> <%= student.lastname %></td>
-                        <td> <%= student.points %></td>
-
-                    </tr>
-                <% end for %>
-
-            </table>            
-
-        <% end html %>
-    	<% end template %>
+        		<% refresh students = getStudents() %>
+        		<% html %>
+		            <table> 
+		                <tr class="header_css">
+		                    <th> name </th>
+		                    <th> lastname </th>
+		                    <th> points </th>
+		                </tr>
+		                <% for i, student in students %>
+		                	<% if i % 2 === 0 then %>
+		                    	<tr class = "even_class">
+		                   <% else %>			  
+		                    	<tr class = "odd_class"	
+		                   <% end if %>
+		                        <td> <%= student.name %></td>
+		                        <td> <%= student.lastname %></td>
+		                        <td> <%= student.points %></td>
+		
+		                    </tr>
+		                <% end for %>
+		            </table>            
+        		<% end html %>
+    		<% end template %>
