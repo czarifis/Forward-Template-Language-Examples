@@ -10,7 +10,7 @@ Assume that students look like this:
 	]
 	
 	
-1. Notice in this example the application developer knows the attribute names in advance and he specifically uses them (he doesn't have to iterate over the attributes of the students object)
+* Notice in this example the application developer knows the attribute names in advance and he specifically uses them (he doesn't have to iterate over the attributes of the students object)
 
 
 view:
@@ -20,6 +20,40 @@ view:
  
 
 		<% template root() %>
+			<% refresh students = getStudents() %>
+			<% html %>
+				<table>	
+					<tr class="header_css">
+						<th> name </th>
+						<th> lastname </th>
+						<th> points </th>
+					</tr>
+					<% for i,student in students %>
+						<% if i % 2 === 0 then %>
+							<tr class="even_class">
+								<td> <%= student.name %></td>
+								<td> <%= student.lastname %></td>
+								<td> <%= student.points %></td>
+							</tr>
+						<% else %>
+							<tr class="odd_class">
+								<td> <%= student.name %></td>
+								<td> <%= student.lastname %></td>
+								<td> <%= student.points %></td>
+							</tr>
+						<% end if %>
+						
+					<% end for %>
+			
+				</table>			
+				
+			<% end html %>
+		<% end template %>
+
+* Another way to write this is using the pos() function:
+
+
+	<% template root() %>
 			<% refresh students = getStudents() %>
 			<% html %>
 				<table>	
