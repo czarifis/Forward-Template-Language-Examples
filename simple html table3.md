@@ -125,7 +125,7 @@ view:
 		                    <th> points </th>
 		                </tr>
 		                <% for i, student in students %>
-		                    <tr class = "<% i % 2 === 0 ? %> even_class : odd_class">
+		                    <tr class = "<% i % 2 === 0 ? %> even_class <% : %> odd_class">
 		                        <td> <%= student.name %></td>
 		                        <td> <%= student.lastname %></td>
 		                        <td> <%= student.points %></td>
@@ -138,7 +138,7 @@ view:
     		<% end template %>
 
 
-* I think it makes sense to also support the following:
+* I think it makes sense to also support the following (since it's supported by php, jsp, etc):
 
 		<% template root() %>
         		<% refresh students = getStudents() %>
