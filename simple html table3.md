@@ -62,8 +62,8 @@ view:
 						<th> lastname </th>
 						<th> points </th>
 					</tr>
-					<% for i,student in students %>
-						<% if i % 2 === 0 then %>
+					<% for student in students %> <!-- I'm not using i,student here-->
+						<% if pos(student) % 2 === 0 then %> <!-- therefore I'm using the pos(student) instead-->
 							<tr class="even_class">
 								<td> <%= student.name %></td>
 								<td> <%= student.lastname %></td>
