@@ -151,7 +151,7 @@ view:
 		                </tr>
 		                <% for i, student in students %>
 		                	<% if i % 2 === 0 then %>
-		                    	<tr class = "even_class">
+		                    	<tr class = "even_class"> <!-- directive->display->html_element with no closing tag-->
 		                   <% else %>			  
 		                    	<tr class = "odd_class"	
 		                   <% end if %>
