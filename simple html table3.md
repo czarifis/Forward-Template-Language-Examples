@@ -87,58 +87,80 @@ view:
 * Based on the BNF we also support the following:
 
 		<% template root() %>
-        <% refresh students = getStudents() %>
-        <% html %>
-            <table> 
-                <tr class="header_css">
-                    <th> name </th>
-                    <th> lastname </th>
-                    <th> points </th>
-                </tr>
-                <% for i, student in students %>
-                    <tr class = "<% if i % 2 === 0 then %>
-                    					even_class
-                    			  <% else %>
-                    			  		odd_class
-                    			  <% end if %>">
-                        <td> <%= student.name %></td>
-                        <td> <%= student.lastname %></td>
-                        <td> <%= student.points %></td>
+		        <% refresh students = getStudents() %>
+		        <% html %>
+		            <table> 
+		                <tr class="header_css">
+		                    <th> name </th>
+		                    <th> lastname </th>
+		                    <th> points </th>
+		                </tr>
+		                <% for i, student in students %>
+		                    <tr class = "<% if i % 2 === 0 then %>
+		                    					even_class
+		                    			  <% else %>
+		                    			  		odd_class
+		                    			  <% end if %>">
+		                        <td> <%= student.name %></td>
+		                        <td> <%= student.lastname %></td>
+		                        <td> <%= student.points %></td>
+		
+		                    </tr>
+		                <% end for %>
+		
+		            </table>            
+		
+		        <% end html %>
+    		<% end template %>
+    		
+* Ternary operators can make the template look cleaner:
+* 
+		<% template root() %>
+		        <% refresh students = getStudents() %>
+		        <% html %>
+		            <table> 
+		                <tr class="header_css">
+		                    <th> name </th>
+		                    <th> lastname </th>
+		                    <th> points </th>
+		                </tr>
+		                <% for i, student in students %>
+		                    <tr class = "<% i % 2 === 0 ? %> even_class <% : %> odd_class">
+		                        <td> <%= student.name %></td>
+		                        <td> <%= student.lastname %></td>
+		                        <td> <%= student.points %></td>
+		                    </tr>
+		                <% end for %>
+		
+		            </table>            
+		
+		        <% end html %>
+    		<% end template %>
 
-                    </tr>
-                <% end for %>
 
-            </table>            
-
-        <% end html %>
-    	<% end template %>
-
-
-* I think it makes sense to also support the following:
+* I think it makes sense to also support the following (since it's supported by php, jsp, etc):
 
 		<% template root() %>
-        <% refresh students = getStudents() %>
-        <% html %>
-            <table> 
-                <tr class="header_css">
-                    <th> name </th>
-                    <th> lastname </th>
-                    <th> points </th>
-                </tr>
-                <% for i, student in students %>
-                	<% if i % 2 === 0 then %>
-                    	<tr class = "even_class">
-                   <% else %>			  
-                    	<tr class = "odd_class"	
-                   <% end if %>
-                        <td> <%= student.name %></td>
-                        <td> <%= student.lastname %></td>
-                        <td> <%= student.points %></td>
-
-                    </tr>
-                <% end for %>
-
-            </table>            
-
-        <% end html %>
-    	<% end template %>
+        		<% refresh students = getStudents() %>
+        		<% html %>
+		            <table> 
+		                <tr class="header_css">
+		                    <th> name </th>
+		                    <th> lastname </th>
+		                    <th> points </th>
+		                </tr>
+		                <% for i, student in students %>
+		                	<% if i % 2 === 0 then %>
+		                    	<tr class = "even_class"> <!-- directive->display->html_element with no closing tag-->
+		                   <% else %>			  
+		                    	<tr class = "odd_class"	
+		                   <% end if %>
+		                        <td> <%= student.name %></td>
+		                        <td> <%= student.lastname %></td>
+		                        <td> <%= student.points %></td>
+		
+		                    </tr>
+		                <% end for %>
+		            </table>            
+        		<% end html %>
+    		<% end template %>
