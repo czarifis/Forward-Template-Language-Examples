@@ -17,6 +17,16 @@ The page model returned by createPageModel() is the following:
 				scale : "Richter",
 				date : "06/22/1989",
 				time : "15:43",
+				affected_cities: [
+					"La Jolla", 
+					"Del Mar",
+					"Solana Beach",
+					"Encinitas",
+					"Carlsbad",
+					"Vista",
+					"San Marcos",
+					"Escondido"
+				]
 			},
 			{
 				location: {
@@ -26,7 +36,17 @@ The page model returned by createPageModel() is the following:
 				magnitude : 5.5,
 				scale : "Richter",
 				date : "01/13/1995",
-				time : "19:48""
+				time : "19:48",
+				affected_cities: [
+					"Newark", 
+					"Manhattan",
+					"Brooklyn",
+					"Elmont",
+					"Queens",
+					"Astoria",
+					"Woodside",
+					"University Heights"
+
 			}
 		
 		]
@@ -53,6 +73,22 @@ The template language is:
 							latitude : <%= earthquake.location.x %>,
 							longitude : <%= earthquake.location.y %>
 						}
+					},
+					infowindow: {
+						content : 
+							<% html %>
+								<table> 
+                					<tr>
+                    					<th> Affected Areas </th>
+                					</tr>
+                					<% for city in earthquake.affected_cities %>
+                    					<tr>
+                        					<td> <%= city %></td>
+                    					</tr>
+                					<% end for %>
+
+            					</table>   
+							<% end html %>
 					}
 				}
 		]
