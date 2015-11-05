@@ -17,8 +17,9 @@
 					for p in l.s/E
 						if p leads to a leaf l with static content then
 							O[p] = l
-						if p leads to a leaf l with dynamic content then
+						if p leads to a super node, internal node or leaf with dynamic content l then
 							O[p] = InstantiatePayload(T,E,t[p]))
+
 				
 	 	
 
