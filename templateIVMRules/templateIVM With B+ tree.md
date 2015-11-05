@@ -20,8 +20,7 @@
 						if p leads to a super node, internal node or leaf with dynamic content l then
 							O[p] = InstantiatePayload(T,E,t[p]))
 
-				
-	 	
+
 
 		function IVM (Template T, Environment E, diff d)
 			S <- empty bag
@@ -41,9 +40,14 @@
 						S <- S \cup Update(e';navigate(u', l))
 				if d is an Update(e, u') 
 					if s matches e and there is no 1-to-1 correspondence between all *'s in s and t then 
-						s', t' = iteratively visit steps in s and t until [*_i] not found in s and return the prefix of s and t (without the [*_i]) 
-						b' = locate super node in T by following s'
-						e'' = return steps of path e that fully matches t'
+                    	t' = {}
+                    	iterate over each step c of t
+                        	if path step signature c is (a static path signature) or (an [*_i] that is also found in s)
+                            	t' = t'c
+                            else break
+                        find node b' in T with path signature that matches t'
+                        s' <- get source path signature of b'
+						e'' = part of path e that is fully matched by s'
 						e' <- constructPath(b', e'')
 						u'' <- InstantiatePayload(T, E, e')
 						S <- S \cup Update(e';u'')
